@@ -1,0 +1,52 @@
+.container {
+  margin: 0 auto;
+  max-width: 650px;
+  position: relative;
+  width: 100%;
+}
+
+.carrusel-container {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.carrusel {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  pointer-events: all;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+}
+
+.carrusel::-webkit-scrollbar {
+  display: none;
+}
+
+.image {
+  aspect-ratio: 1/1;
+  display: block;
+  object-fit: cover;
+  scroll-snap-align: start;
+  width: 100%;
+}
+
+.icons {
+  bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+.icons input {
+  aspect-ratio: 1/1;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  width: 30px;
+}
