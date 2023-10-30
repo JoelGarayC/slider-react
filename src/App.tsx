@@ -121,6 +121,25 @@ function App() {
     }
   }, [images.length])
 
+  useEffect(() => {
+    if (carrousel.current === null) return
+    const carrouselCurrent = carrousel.current
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault()
+
+      // const delta = e.deltaY || e.detail || e.wheelDelta
+      const delta = e.deltaY || e.detail
+
+      carrouselCurrent.scrollLeft += delta * 4
+    }
+
+    carrouselCurrent.addEventListener('wheel', (e) => handleWheel(e))
+    return () => {
+      carrouselCurrent.removeEventListener('wheel', (e) => handleWheel(e))
+    }
+  }, [])
+
   return (
     <>
       <div className='App'>
